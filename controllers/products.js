@@ -1,4 +1,4 @@
-const getRandomImageUrl = require('../util/imageHelpers')
+const Product = require('../models/product')
 
 const products = []
 
@@ -7,12 +7,7 @@ exports.getAddProduct = (req, res, next) => {
 }
 
 exports.postAddProduct = (req, res, next) => {
-  const product = {
-    title: req.body.title,
-    image: {
-      url: getRandomImageUrl()
-    }
-  }
+  const product = new Product(req.body.title)
   products.push(product)
   res.redirect('/')
 }
