@@ -1,12 +1,9 @@
-const path = require('path')
-
 const getRandomImageUrl = require('../util/imageHelpers')
-const rootDir = require('../util/path')
 
 const products = []
 
 exports.getAddProduct = (req, res, next) => {
-  res.sendFile(path.join(rootDir, 'views', 'new-product.html'))
+  res.render('new-product')
 }
 
 exports.postAddProduct = (req, res, next) => {
