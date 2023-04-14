@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon ./adapters/primary/mvc/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonathan Rayback",
@@ -16,6 +16,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "js-money": "^0.6.3",
     "pug": "^3.0.2"
   }
 }
