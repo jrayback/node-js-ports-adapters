@@ -5,11 +5,14 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./adapters/primary/mvc/app.js",
+    "start-cli": "node ./adapters/primary/cli/index.js",
+    "start-web": "nodemon ./adapters/primary/mvc/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonathan Rayback",
   "license": "UNLICENSED",
   "devDependencies": {
+    "cowsay": "^1.5.0",
     "nodemon": "^2.0.22",
     "standard": "^17.0.0"
   },
