@@ -13,6 +13,6 @@ yargs(hideBin(process.argv))
         default: ''
       })
   }, (argv) => {
-    addProduct(argv.title)
+    addProduct(argv.title) // use dependency injection or similar here to pass in the right type of repo to use (e.g., fileBased)
   })
   .parse()
