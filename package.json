@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./adapters/primary/mvc/app.js",
-    "start-cli": "node ./adapters/primary/cli/index.js",
+    "start-cli": "node ./adapters/primary/cli/app.js",
     "start-web": "nodemon ./adapters/primary/mvc/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +20,7 @@
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "js-money": "^0.6.3",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "yargs": "^17.7.1"
   }
 }

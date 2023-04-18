@@ -1,3 +1,3 @@
-module.exports = () => {
-  console.log('adding product')
+module.exports = (title) => {
+  console.log('Adding product [' + title + ']')
 }
