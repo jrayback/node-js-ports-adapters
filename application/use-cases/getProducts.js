@@ -1,5 +1,5 @@
-const productRepo = require('../../adapters/secondary/inMemoryDataRepo/productRepo')
-
-module.exports = () => {
-  return productRepo.getAll()
+module.exports = (repo, callback) => {
+  repo.getAll((products) => {
+    callback(products)
+  })
 }
