@@ -17,10 +17,12 @@ yargs(hideBin(process.argv))
       })
   }, (argv) => {
     addProduct(productRepo, argv.title)
-    console.log('app.js: added ' + argv.title)
+    console.log('added ' + argv.title)
   })
   .command('get-products', 'Get all products', () => {}, (argv) => {
-    // getProducts((products) => { console.log(products) })
     console.log('getting products...')
+    getProducts(productRepo, (products) => {
+      console.log(products)
+    })
   })
   .parse()

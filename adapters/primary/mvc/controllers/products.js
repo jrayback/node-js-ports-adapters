@@ -7,13 +7,12 @@ exports.getAddProduct = (req, res, next) => {
 }
 
 exports.postAddProduct = (req, res, next) => {
-  addProduct(productRepo, req.body.title) // use dependency injection or similar here to pass in the right type of repo to use (e.g., inMemory)
+  addProduct(productRepo, req.body.title)
   res.redirect('/')
 }
 
 exports.getProducts = (req, res, next) => {
-  getProducts(productRepo, (products) => { // <---------------I think it's correct to inject the correct adapter here
-    console.log('from mvc controller, products are: ' + products)
+  getProducts(productRepo, (products) => {
     res.render('shop', { products })
   })
 }

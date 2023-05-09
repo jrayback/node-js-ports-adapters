@@ -11,7 +11,6 @@ exports.save = (product) => {
       const products = fileContent ?? false ? JSON.parse(fileContent) : []
       products.push(product)
       const newFileContent = JSON.stringify(products)
-      console.log('productRepo.js: ' + newFileContent)
       fs.writeFile(filePath, newFileContent, (err) => {
         if (err) {
           console.log(err)
