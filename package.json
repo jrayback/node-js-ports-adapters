@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./adapters/primary/mvc/app.js",
-    "start-cli": "node ./adapters/primary/cli/app.js",
-    "start-web": "nodemon ./adapters/primary/mvc/app.js",
+    "start": "npm run web",
+    "cli": "node ./adapters/primary/cli/app.js",
+    "web": "nodemon ./adapters/primary/mvc/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonathan Rayback",
