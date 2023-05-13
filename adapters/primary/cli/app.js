@@ -3,8 +3,8 @@
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 
-const addProduct = require('../../../application/use-cases/addProduct')
-const getProducts = require('../../../application/use-cases/getProducts')
+const addProduct = require('../../../ports/addProduct')
+const getProducts = require('../../../ports/getProducts')
 const productRepo = require('../../secondary/fileSystemDataRepo/productRepo')
 
 yargs(hideBin(process.argv))

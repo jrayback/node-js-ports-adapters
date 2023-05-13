@@ -1,5 +1,5 @@
-const addProduct = require('../../../../application/use-cases/addProduct')
-const getProducts = require('../../../../application/use-cases/getProducts')
+const addProduct = require('../../../../ports/addProduct')
+const getProducts = require('../../../../ports/getProducts')
 const productRepo = require('../../../secondary/inMemoryDataRepo/productRepo')
 
 exports.getAddProduct = (req, res, next) => {

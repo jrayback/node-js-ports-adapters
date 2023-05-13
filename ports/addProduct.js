@@ -1,4 +1,4 @@
-const Product = require('../../domain/product')
+const Product = require('../domain/product')
 
 module.exports = (repo, title) => {
   const product = new Product(title)
