@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npm run web",
+    "build": "npx tsc",
+    "start": "npm run build; node ./bin/main.js",
     "cli": "node ./adapters/primary/cli/app.js",
     "web": "nodemon ./adapters/primary/mvc/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +15,8 @@
   "devDependencies": {
     "cowsay": "^1.5.0",
     "nodemon": "^2.0.22",
-    "standard": "^17.0.0"
+    "standard": "^17.0.0",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
