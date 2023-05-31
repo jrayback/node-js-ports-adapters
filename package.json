@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "npx tsc",
-    "start": "npm run build; node ./bin/main.js",
+    "start": "npm run build; node ./dist/main.js",
     "cli": "node ./adapters/primary/cli/app.js",
     "web": "nodemon ./adapters/primary/mvc/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
   "devDependencies": {
     "cowsay": "^1.5.0",
     "nodemon": "^2.0.22",
-    "standard": "^17.0.0",
+    "ts-standard": "^12.0.2",
     "typescript": "^5.0.4"
   },
   "dependencies": {
@@ -24,5 +24,10 @@
     "js-money": "^0.6.3",
     "pug": "^3.0.2",
     "yargs": "^17.7.1"
+  },
+  "ts-standard": {
+    "ignore": [
+      "dist"
+    ]
   }
 }

@@ -1,3 +1,6 @@
+# I don't want to check-in build artifacts
+dist
+
 # Local file I use for file system data repo, don't want it in source control
 data.json
 
