@@ -1,16 +1,23 @@
-const Money = require('js-money')
+import Money from 'js-money'
 
-module.exports = class Product {
-  constructor (t) {
-    this.title = t
-    this.imageUrl = getRandomImageUrl()
-    this.price = getRandomPrice()
-    this.description = getRandomDescription()
+interface BaseProduct {
+  title: string
+  imageUrl: string
+  price: string
+  description: string
+}
+
+function Product (title: string): BaseProduct {
+  return {
+    title,
+    imageUrl: getRandomImageUrl(),
+    price: getRandomPrice(),
+    description: getRandomDescription()
   }
 }
 
-const getRandomImageUrl = () => {
-  const images = [
+const getRandomImageUrl = (): string => {
+  const images: string[] = [
     'https://imgs.search.brave.com/6Vz0ELfQ0J7UI5KusjTF64ZWnWCtOQa3v1qewANrTBU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/LmV4cGxpY2l0LmJp/bmcubmV0L3RoP2lk/PU9JUC5DbEVYdjZV/SFBBaE9aLTROZGlh/dXBnSGFIYSZwaWQ9/QXBp',
     'https://imgs.search.brave.com/rnRugC9P_04qJOpxV5cIH_Ao1KGsS1YFZ3L288yc3Cs/rs:fit:355:225:1/g:ce/aHR0cHM6Ly90c2U0/LmV4cGxpY2l0LmJp/bmcubmV0L3RoP2lk/PU9JUC5DOHdQdWNt/YVZrWktvWTIwQVpR/TUJ3SGFKNCZwaWQ9/QXBp',
     'https://imgs.search.brave.com/aq2i4G2vFDno2NE7QquxJo3cq8gZQ_HREYdnScDshKc/rs:fit:715:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Z/VWF4aHBvbWptYXVn/dHFvS2J4THNRSGFF/NiZwaWQ9QXBp',
@@ -28,16 +35,17 @@ const getRandomImageUrl = () => {
   return images[index]
 }
 
-const getRandomPrice = () => {
+const getRandomPrice = (): string => {
   const min = 1.13
   const max = 99.99
   const seed = getRandomNumber(min, max)
   const someMoney = Money.fromDecimal(seed, Money.USD, Math.ceil)
-  return '$' + someMoney.toString()
+  const moneyString: string = someMoney.toString()
+  return '$' + moneyString
 }
 
-const getRandomDescription = () => {
-  const loremIpsum = [
+const getRandomDescription = (): string => {
+  const loremIpsum: string[] = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     'Vitae turpis massa sed elementum tempus egestas sed.',
     'Pretium nibh ipsum consequat nisl vel.',
@@ -66,12 +74,14 @@ const getRandomDescription = () => {
   return description
 }
 
-function getRandomInteger (min, max) {
+function getRandomInteger (min: number, max: number): number {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
-function getRandomNumber (min, max) {
+function getRandomNumber (min: number, max: number): number {
   return (Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
+
+export default Product

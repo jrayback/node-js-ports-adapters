@@ -1,3 +1,6 @@
+import Product from '../product'
+
 test('dummy Product test', () => {
-  expect(true).toBe(true)
+  const product = Product('new product')
+  expect(product.title).toBe('new product')
 })
