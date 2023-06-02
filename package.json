@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && npx tsc",
     "start": "npm run build && node ./build/src/main.js",
-    "cli": "npm run build && node ./build/src/adapters/primary/cli/app.js",
+    "cli": "npm run build && node ./build/src/adapters/primary/cli/cli.js",
     "clean": "rm -rf ./build/src",
     "test": "jest",
     "web": "nodemon ./adapters/primary/mvc/app.js"
