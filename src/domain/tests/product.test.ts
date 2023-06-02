@@ -1,6 +1,6 @@
-import Product from '../product'
+import { ProductFactory } from '../product'
 
 test('dummy Product test', () => {
-  const product = Product('new product')
+  const product = ProductFactory('new product')
   expect(product.title).toBe('new product')
 })

@@ -4,20 +4,24 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "npx tsc",
-    "start": "npm run build; node ./dist/main.js",
-    "cli": "node ./adapters/primary/cli/app.js",
-    "web": "nodemon ./adapters/primary/mvc/app.js",
-    "test": "jest"
+    "build": "npm run clean && npx tsc",
+    "start": "npm run build && node ./build/src/main.js",
+    "cli": "npm run build && node ./build/src/adapters/primary/cli/app.js",
+    "clean": "rm -rf ./build/src",
+    "test": "jest",
+    "web": "nodemon ./adapters/primary/mvc/app.js"
   },
   "author": "Jonathan Rayback",
   "license": "UNLICENSED",
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "@types/js-money": "^0.6.2",
+    "@types/yargs": "^17.0.24",
+    "copyfiles": "^2.4.1",
     "cowsay": "^1.5.0",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
+    "rimraf": "^5.0.1",
     "ts-jest": "^29.1.0",
     "ts-standard": "^12.0.2",
     "typescript": "^5.0.4"
@@ -27,7 +31,8 @@
     "express": "^4.18.2",
     "js-money": "^0.6.3",
     "pug": "^3.0.2",
-    "yargs": "^17.7.1"
+    "yargs": "^17.7.1",
+    "yargs-promise": "^1.1.0"
   },
   "ts-standard": {
     "ignore": [

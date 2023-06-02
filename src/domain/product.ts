@@ -1,13 +1,13 @@
 import Money from 'js-money'
 
-interface BaseProduct {
+interface Product {
   title: string
   imageUrl: string
   price: string
   description: string
 }
 
-function Product (title: string): BaseProduct {
+function ProductFactory (title: string): Product {
   return {
     title,
     imageUrl: getRandomImageUrl(),
@@ -84,4 +84,4 @@ function getRandomNumber (min: number, max: number): number {
   return (Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
 
-export default Product
+export { Product, ProductFactory }
