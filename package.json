@@ -7,13 +7,17 @@
     "build": "npm run clean && npx tsc",
     "start": "npm run build && node ./build/src/main.js",
     "cli": "npm run build && node ./build/src/adapters/primary/cli/cli.js",
-    "clean": "rm -rf ./build/src",
+    "clean": "npx rimraf ./build/src",
     "test": "jest",
-    "web": "nodemon ./adapters/primary/mvc/app.js"
+    "web": "npm run build && npm run web-copy && node ./build/src/adapters/primary/mvc/server.js",
+    "web-copy": "npm run web-copy-views && npm run web-copy-public",
+    "web-copy-views": "npx copyfiles ./src/adapters/primary/mvc/views/* build",
+    "web-copy-public": "npx copyfiles ./src/adapters/primary/mvc/public/**/* build"
   },
   "author": "Jonathan Rayback",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "@types/jest": "^29.5.1",
     "@types/js-money": "^0.6.2",
     "@types/yargs": "^17.0.24",
