@@ -19,13 +19,11 @@ export const getRandomImageUrl = (): string => {
   return images[index]
 }
 
-export const getRandomPrice = (): string => {
+export const getRandomPrice = (): Money => {
   const min = 1.13
   const max = 99.99
   const seed = getRandomNumber(min, max)
-  const someMoney = Money.fromDecimal(seed, Money.USD, Math.ceil)
-  const moneyString: string = someMoney.toString()
-  return '$' + moneyString
+  return Money.fromDecimal(seed, Money.USD, Math.ceil)
 }
 
 export const getRandomDescription = (): string => {

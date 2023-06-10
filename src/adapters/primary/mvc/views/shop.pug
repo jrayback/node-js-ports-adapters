@@ -25,7 +25,7 @@ html(lang="en")
                 - const imageUrl = product.imageUrl
                 img(src=imageUrl, alt="A Thing")
               .card__content 
-                h2.product__price #{product.price}
+                h2.product__price #{'$' + product.price.toString()}
                 p.product__description #{product.description}
               .card__actions 
                 button.btn Add to Cart
