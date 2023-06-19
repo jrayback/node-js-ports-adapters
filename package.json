@@ -9,7 +9,7 @@
     "cli": "npm run build && node ./build/src/adapters/primary/cli/cli.js",
     "clean": "npx rimraf ./build/src",
     "test": "jest",
-    "web": "npm run build && npm run web-copy && node ./build/src/adapters/primary/mvc/server.js",
+    "web": "npm run build && npm run web-copy && node ./build/src/adapters/primary/mvc/app.js",
     "web-copy": "npm run web-copy-views && npm run web-copy-public",
     "web-copy-views": "npx copyfiles ./src/adapters/primary/mvc/views/* build",
     "web-copy-public": "npx copyfiles ./src/adapters/primary/mvc/public/**/* build"
@@ -32,9 +32,9 @@
   },
   "dependencies": {
     "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "js-money": "^0.6.3",
-    "pug": "^3.0.2",
     "yargs": "^17.7.1",
     "yargs-promise": "^1.1.0"
   },

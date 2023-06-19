@@ -9,8 +9,10 @@ import shopRoutes from './routes/shop'
 
 const app = express()
 
-app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+const viewPath = path.join(__dirname, 'views')
+console.log(viewPath)
+app.set('views', viewPath)
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
