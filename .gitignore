@@ -1,7 +1,8 @@
 # I don't want to check-in build artifacts
-build
+dist
 
 # Local file I use for file system data repo, don't want it in source control
+data
 fileData.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/node

@@ -3,12 +3,13 @@ import path from 'path'
 import { Product } from '../../../domain/product'
 import { ProductRepository } from '../../../ports/secondary/productRepository'
 
-const filePath = path.resolve(__dirname, '../../../../data/fileData.json')
+const filePath = path.resolve(__dirname, '../../../../../data/fileData.json')
+console.log(filePath)
 
 export const FileSystemProductRepository: ProductRepository = {
   save: (product: Product) => {
     fs.readFile(filePath, (err, fileContent) => {
-      if ((err != null) && err.code !== 'ENOENT') {
+      if (err != null) {
         console.log(err)
       } else {
         const products = fileContent.length !== 0 ? JSON.parse(fileContent.toString()) : []
